@@ -4,7 +4,7 @@ This is a static, one page, website which covers the similarites and differences
 
 # Sources
 
-All research notes and sources can be found on this [Google Doc](ihttps://docs.google.com/document/d/1GNlyoztjAMHKa6l8K-k-QsMk00YC_VVjBNRlRXceRLk/edit?usp=sharing).
+All research notes and sources can be found on [this](https://docs.google.com/document/d/1GNlyoztjAMHKa6l8K-k-QsMk00YC_VVjBNRlRXceRLk/edit?usp=sharing) Google Doc.
 
 # Developer
 
