@@ -5,11 +5,63 @@
   <title>LLMs and Language</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="LLMs, AI, Linguistics" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
   <link rel="icon" href="favicon.png">
 </head>
 <body>
+  <style>
+    :root {
+      --bs-font-sans-serif: "Rubik", sans-serif !important;
+      --bs-body-font-family: var(--bs-font-sans-serif) !important;
+
+      --bs-body-color: #625E63 !important;
+      --bs-body-color-rgb: 98, 94, 99 !important;
+      --bs-body-bg: #E2D8CB !important;
+      --bs-body-bg-rgb: 226, 216, 203 !important;
+
+      --bs-emphasis-color: #CB9F5C !important;
+      --bs-emphasis-color-rgb: 203, 159, 92 !important;
+      --bs-heading-color: var(--bs-emphasis-color) !important;
+
+      --bs-link-color: #BD6444 !important;
+      --bs-link-color-rgb: 189, 100, 68 !important;
+      --bs-link-decoration: none !important;
+      --bs-link-hover-color: #C4794F !important;
+      --bs-link-hover-color-rgb: 96, 121, 79 !important;
+    }
+
+    em {
+      color: var(--bs-emphasis-color);
+    }
+
+    a {
+      color: var(--bs-link-color);
+      text-decoration: var(--bs-link-decoration);
+    }
+
+    a:hover {
+      color: var(--bs-link-hover-color);
+    }
+
+    span:nth-child(2n) {
+      color: #5C7373;
+    }
+
+    span:nth-child(2n+1) {
+      color: #BD6444;
+    }
+
+    span:nth-child(3n+1) {
+      color: #C78A50;
+    }
+
+    .example-section {
+      text-align: center;
+    }
+  </style>
   <div class="container">
     <div id="title" class="text-center">
       <h1>LLMs and Language</h1> 
@@ -18,77 +70,203 @@
     <br>
 
     <div id="overview">
-      <h2 id="overview"><a href="/#overview">Overview</a></h2>
-      <p>This page dives into the similarities and differences between LLMs, like <a href="https://openai.com/research/gpt-4">GPT-4</a> and humans. Specifically, it gives a brief overview of how both AI and Humans process language and goes on to analyze how they are related, or not. Surprisingly there are many strong relationships, and of course differences. We will try and analyze how each "method" of processing language can benefit each other.</p>
-      <p>Before we start however what exactly is an LLM? Well and LLM, or Large Language Model is a very specific type of AI that falls under a subsection called Deep Learning. Deep learning specifically uses a type of model called a <em>neural network</em> which kind of emulates how our brain works. There are millions, sometimes billions in the case of LLMs, of "neurons" that make up the entire model. These models then generate text by feeding them with humongous amounts of data to train them.</p>
+      <h2 id="overview"><a href="#overview">Overview</a></h2>
+      <p>This page dives into the similarities and differences between LLMs, like <a href="https://openai.com/research/gpt-4">GPT-4</a> 
+        and humans. Specifically, it gives a brief overview of how both AI and humans process language and goes on to analyze 
+        how they are related, or not. Surprisingly there are many strong relationships, and of course differences. 
+        We will try and analyze how each "method" of processing language can benefit each other.</p>
+      <p>Before we start however what exactly is an LLM? Well and LLM, or Large Language Model is a very specific type of AI 
+        that falls under a subsection called Deep Learning. Deep learning specifically uses a type of model called a 
+        <em>neural network</em> which kind of emulates how our brain works. There are millions, sometimes billions in the case of LLMs, 
+        of "neurons" that make up the entire model. These models then generate text by feeding them with 
+        humongous amounts of data to train them.</p>
 
       <p>The processing of text by a LLM can roughly be broken down into 2 distinct steps:</p>
       <ol>
-        <li><a href="/#pre-processing">Pre-Processing</a></li>
-        <li><a href="/#prediction">Prediction Loop</a></li>
+        <li><a href="#pre-processing">Pre-Processing</a></li>
+        <li><a href="#prediction">Prediction Loop</a></li>
       </ol>
 
       <p>Each of those parts correspond with the following linguistic concepts:</p>
       <ol>
-        <li><a href="/#morphology">Morphology</a></li>
-        <li><a href="/#syntax-processing">Syntax Processing </a></li>
+        <li><a href="#morphology">Morphology</a></li>
+        <li><a href="#syntax-processing">Syntax Processing </a></li>
       </ol>
       <p>The rest of this page will go into how exactly each processing step is related to a specific linguistic concept!</p>
     </div>
 
     <br>
 
-    <div id="step-one" class="row">
+    <div id="step-one" class="row justify-content-around">
       <div id="step-one-title" class="text-center mb-4">
-        <h2><a href="/#step-one">Step One</a></h2> 
+        <h2><a href="#step-one">Step One</a></h2> 
       </div>
 
       <div id="pre-processing" class="col">
-        <h3><a href="/#pre-processing">Pre-Processing</a></h3>
-        <p>Take the question <em>"What color is an apple?"</em>. You and I understand exactly what the question is asking, but how does a machine understand what is being asked? This is where pre-processing comes in. It helps machines understand the meaning behind some text by converting it to a format that is meaningful, to the machine at least.</p>
+        <h3><a href="#pre-processing">Pre-Processing</a></h3>
+        <p>Take the question <em>"What color is an apple?"</em>. You and I understand exactly what the question is asking, 
+          but how does a machine understand what is being asked? This is where pre-processing comes in. 
+          It helps machines understand the meaning behind some text by converting it to a format that is meaningful, 
+          to the machine at least.</p>
         <p>This step involves two sub-steps:</p>
         <ol>
           <li>Tokenizing</li>
           <li>Embedding</li>
         </ol>
 
-        <p><strong>Tokenizing</strong> is the process of breaking down some given text into smaller bits and pieces that are better suited for the LLM to understand. Tokens are usually around a word to 3 letters long are usually found by grouping together common sequences of letters. You can find example of how text is tokenized <a href="https://platform.openai.com/tokenizer">here</a>.</p>
-        <p><strong>Embedding</strong> is the process of further transforming each <em>Token</em> into a more meaningful representation. In this case each token is transformed into a multi-dimensional vector where each dimension encodes some semantic meaning. That was a little technical, but essentially each Token is given a dictionary definition.</p>
+        <p><strong>Tokenizing</strong> is the process of breaking down some given text into smaller bits and pieces 
+          that are better suited for the LLM to understand. Tokens are usually around a word to 3 letters long and 
+          are usually found by grouping together common sequences of letters. 
+          You can find example of how text is tokenized <a href="https://platform.openai.com/tokenizer">here</a>.</p>
+        <p><strong>Embedding</strong> is the process of further transforming each <em>Token</em> into a more meaningful representation. 
+          In this case each token is transformed into a multi-dimensional vector where each dimension encodes some semantic meaning. 
+          That was a little technical, but essentially each Token is given a dictionary definition.</p>
       </div>
 
       <div id="morphology" class="col">
-        <h3><a href="/#morphology">Morphology</a></h3>
-        <p>Morphology is the study of the sub-structure of words. It deals with how words are formed out of meaningful bits and pieces of text. For example <em>cloudy</em> is one word that describes the weather, but we can modify that word with the suffix <em>-er</em> to signify that it is more cloudy, comparatively.</p>
-        <p>There are many different types of morphological analysis, but we will focus on <a href="https://en.wikipedia.org/wiki/Morphology_(linguistics)#Morpheme-based_morphology">morpheme-based morphology</a> which focuses on separating words into "fixes" that either preceede or follow a root morpheme. Morpheme-based morphology is great for understanding how language can be broken down into its its most basic meaningful building blocks. It helps us register how we can understand seemingly nonsensical compounds like <em>"ferociousfulness"</em> which would mean, "full of a fercious quality". This form of analysis is similar to how <a href="/#pre-processing">pre-processing</a> works, which is what we will discuss in the next section.</p>
+        <h3><a href="#morphology">Morphology</a></h3>
+        <p>Morphology is the study of the sub-structure of words. 
+          It deals with how words are formed out of meaningful bits and pieces of text. 
+          For example <em>cloudy</em> is one word that describes the weather, 
+          but we can modify that word with the suffix <em>-er</em> to signify that it is more cloudy, comparatively.</p>
+        <p>There are many different types of morphological analysis, but we will focus on 
+          <a href="https://en.wikipedia.org/wiki/Morphology_(linguistics)#Morpheme-based_morphology">morpheme-based morphology</a> 
+          which focuses on separating words into "fixes" that either preceede or follow a root morpheme. 
+          Morpheme-based morphology is great for understanding how language can be broken down into its its most basic meaningful 
+          building blocks. It helps us register how we can understand seemingly nonsensical compounds like 
+          <em>"ferociousfulness"</em> which would mean, "full of a fercious quality". 
+          This form of analysis is similar to how <a href="#pre-processing">pre-processing</a> works, 
+          which is what we will discuss in the next section.</p>
+      </div>
+
+      <div class="w-100"></div>
+
+      <div id="tokenizer-examples" class="col-4 example-section">
+        <h4>Tokenizer Breakdown</h4>
+        <div id="tokenizer-ex-1">
+          <span>The</span><span> quick</span><span> brown</span>
+          <span> fox</span><span> jumped</span><span> over</span>
+          <span> the</span><span> lazy</span><span> dog</span><span>.</span>
+        </div>
+        <div id="tokenizer-ex-2" class="d-none">
+          <span>I</span><span> was</span><span> watching</span>
+          <span> the</span><span> game</span>
+          <span> gle</span><span>efully</span><span>!</span>
+        </div>
+        <div id="tokenizer-ex-3" class="d-none">
+          <span>"You</span><span> miss</span><span> </span><span>100</span><span>%</span>
+          <span> of</span><span> the</span><span> shots</span>
+          <span> you</span><span> don</span><span>'t</span>
+          <span> take</span><span>"</span><span> -</span>
+          <span> Wayne</span><span> Gret</span><span>sky</span>
+          <span> Michael</span><span> Scott</span><span>.</span>
+        </div>
+      </div>
+
+      <div class="col-1 justify-content-center">
+        <select id="select-example" name="select-example">
+          <option value="ex-1">Example 1</option>
+          <option value="ex-2">Example 2</option>
+          <option value="ex-3">Example 3</option>
+        </select>
+      </div>
+
+      <div id="morpheme-examples" class="col-4 example-section">
+        <h4>Morpheme Breakdown</h4>
+        <div id="morpheme-ex-1">
+          <span>The</span><span> quick</span><span> brown</span>
+          <span> fox</span><span> jump</span><span>ed</span>
+          <span> over</span><span> the</span><span> lazy</span>
+          <span> dog</span><span>.</span>
+        </div>
+        <div id="morpheme-ex-2" class="d-none">
+          <span>I</span><span> was</span><span> watch</span><span>ing</span>
+          <span> the</span><span> game</span>
+          <span> glee</span><span>full</span><span>y</span><span>!</span>
+        </div>
+        <div id="morpheme-ex-3" class="d-none">
+          <span>"You</span><span> miss</span><span> 100</span><span>%</span>
+          <span> of</span><span> the</span><span> shot</span><span>s</span>
+          <span> you</span><span> do</span><span>n't</span>
+          <span> take</span><span>"</span><span> -</span>
+          <span> Wayne</span><span> Gretsky</span>
+          <span> Michael</span><span> Scott</span><span>.</span>
+        </div>
+      </div>
+
+      <div class="w-100">
+        <br>
       </div>
 
       <h3>Pre-Processing + Morphology</h3>
-      <p>Now, taking what we know about pre-processing and morphology, we can start to see how similar they are. They both have the same end-goal, to break large chunks of text into smaller units that contain meaning. This interesting similarity can potentially be used to help us create better LLMs by trying different pre-processing methods that draw inspiration from morphology. For example, what if we chose tokens based on the <a href="https://en.wikipedia.org/wiki/Morphology_(linguistics)#Lexeme-based_morphology">lexeme model</a>? This may add new "hidden" dimensions of meaning behind some text!</p> 
+      <p>Now, taking what we know about pre-processing and morphology, we can start to see how similar they are. 
+        They both have the same end-goal, to break large chunks of text into smaller units that contain meaning. 
+        This interesting similarity can potentially be used to help us create better LLMs by trying different 
+        pre-processing methods that draw inspiration from morphology. 
+        For example, what if we chose tokens based on the 
+        <a href="https://en.wikipedia.org/wiki/Morphology_(linguistics)#Lexeme-based_morphology">lexeme model</a>? 
+        This may add new "hidden" dimensions of meaning behind some text!</p> 
     </div>
 
     <br>
 
     <div id="step-two" class="row">
       <div id="step-two-title" class="text-center mb-4">
-        <h2><a href="/#step-two">Step Two</a></h2> 
+        <h2><a href="#step-two">Step Two</a></h2> 
       </div>
 
       <div id="prediction" class="col">
-        <h3><a href="/#prediction">Prediction</a></h3>
-        <p>The prediction step is where a lot of the magic happens in LLMs. This step involves a lot of math, specifically linear algebra, that I am going to skip over. However there is a great video as part of a series on the math behind LLMs like ChatGPT from <a href="https://www.youtube.com/watch?v=wjZofJX0v4M">3Blue1Brown</a>.</p>
-        <p>Prediction works by feeding a machine learning model with the <em>embedded text</em> (from our last step). The model does some fancy 3 dimensional matrix multiplications and generates a distribution of the next best token or word. Again a somewhat fancy way of saying that the model just picks the next best word that it thinks should come after the given text. It doesn't necessarily "understand" the text, but it does know what would fit next in the text.</p>
-        <p>This is similar to playing a word-association game where you're given a sentence like: <em>"I went to the _____"</em> and you complete the sentence. Instead of doing this just once, however, LLMs continue to update the input text to the model to generate the next word or token until some stopping criteria is met.</p>
+        <h3><a href="#prediction">Prediction</a></h3>
+        <p>The prediction step is where a lot of the magic happens in LLMs. 
+          This step involves a lot of math, specifically linear algebra, that I am going to skip over. 
+          However there is a great video as part of a series on the math behind LLMs like ChatGPT from 
+          <a href="https://www.youtube.com/watch?v=wjZofJX0v4M">3Blue1Brown</a>.</p>
+        <p>Prediction works by feeding a machine learning model with the <em>embedded text</em> (from our last step).
+          The model does some fancy 3 dimensional matrix multiplications and generates a distribution of the next best token or word. 
+          Again a somewhat fancy way of saying that the model just picks the next best word that it thinks should come after the given text. 
+          It doesn't necessarily "understand" the text, but it does know what would fit next in the text.</p>
+        <p>This is similar to playing a word-association game where you're given a sentence like: 
+          <em>"I went to the _____"</em> and you complete the sentence. 
+          Instead of doing this just once, however, 
+          LLMs continue to update the input text to the model to generate the next word or token until some stopping criteria is met.</p>
       </div>
 
       <div id="syntax-processing" class="col">
-        <h3><a href="/#syntax-processing">Syntax Processing</a></h3>
-        <p>Syntax plays a large role in how humans process and understand language. Humans inherently seem understand how syntax works in their native language. Even for nonsensical sentences we've heard before, like <em>"The blue armadillo walked swiftly to mars"</em>, we seem to understand that all the words are in the proper order and with the correct grammar. This is useful as it means humans can also understand any arbitrary text, as long as the words make sense.</p>
-        <p>That's great for understanding language, but how do we generate language? Well, according to <a href="https://www.scientificamerican.pom/article/memory-for-grammar/">this</a> short article by <em>Nicole Branan</em>, humans actually generate language through procedural memory, which is closely linked with skills like swimming or riding a bike. This works well with a syntactical model as coming up with what to say next becomes more like a pattern matching game, which humans are great at! It's much easier to remember generic syntax, and associate words and grammar with what you are trying to express rather than recalling the exact meaning of every word and putting it in its place.</p>
+        <h3><a href="#syntax-processing">Syntax Processing</a></h3>
+        <p>Syntax plays a large role in how humans process and understand language. 
+          Humans inherently seem understand how syntax works in their native language. 
+          Even for nonsensical sentences we've heard before, like <em>"The blue armadillo walked swiftly to mars"</em>, 
+          we seem to understand that all the words are in the proper order and with the correct grammar. 
+          This is useful as it means humans can also understand any arbitrary text, as long as the words make sense.</p>
+        <p>That's great for understanding language, but how do we generate language? 
+          Well, according to <a href="https://www.scientificamerican.pom/article/memory-for-grammar/">this</a> 
+          short article by <em>Nicole Branan</em>, humans actually generate language through procedural memory, 
+          which is closely linked with skills like swimming or riding a bike. 
+          This works well with a syntactical model as coming up with what to say next becomes more like a pattern matching game, 
+          which humans are great at! 
+          It's much easier to remember generic syntax, and associate words and grammar with what you are trying to express 
+          rather than recalling the exact meaning of every word and putting it in its place.</p>
       </div>
 
       <h3>Prediction + Syntax Processing</h3>
-      <p>So how exactly are these two things related? Well, they're not very related at all. Humans and AI may process text fairly similarly, namely by breaking text into the smallest meaningful parts. But coming up with text is differs by a lot. That does not mean we can't learn from LLMs or vice versa though. While LLMs can come up with text much faster than humans, it usually suffers from keeping the correct context.</p> 
+      <p>So how exactly are these two things related? Well, they're not very related at all. 
+        Humans and AI may process text fairly similarly, namely by breaking text into the smallest meaningful parts. 
+        But coming up with text is differs by a lot. That does not mean we can't learn from LLMs or vice versa though. 
+        While LLMs can come up with text much faster than humans, it usually suffers from issues like bias, misinformation, 
+        and accuracy. Humans on the other hand are much more aware of those issues, but struggle to generate language as fast as LLMs. 
+        Perhaps changing models to be more self-reflective, similar to humans, would help increase the accuracy of the generated text?
+        While this may help, it may also prove to be its own downfall as it may start to rationalize a faulty train of thought.  </p>
+      <p>But really, how different is that from humans? Surprisingly even though LLMs and humans take such a drastically different approach
+        to generating langugage we seem to fail in similar ways. Humans can also be biased, inaccurate, and misinformed. However, we make up
+        for that with awareness and knowledge and tools of how to correct those things to the best of our ability. That's what pepole are
+        trying to do with LLMs right now! By feeding the correct information and giving the LLM access to certain tools it can check itself
+        for errors in its own text generation. By no means is it perfect, again just like us humans, but its a strong step 
+        forward to better LLMs and AI.</p> 
     </div>
+  </div>
+
+  <div class="row text-center">
+    <h3><a href="/">Home Page</a></h3>  
   </div>
 
   <script src="assets/js/app.js"></script>
